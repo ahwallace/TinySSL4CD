@@ -1,24 +1,24 @@
 import os
 import torch
 from argparse import ArgumentParser
-from models.trainer import *
+from models_cd.trainer import *
 
 print(torch.cuda.is_available())
+
 
 """
 the main function for training the CD networks
 """
 
-
 def train(args):
-    dataloaders = utils.get_loaders(args)
+    dataloaders = utils_cd.get_loaders(args)
     model = CDTrainer(args=args, dataloaders=dataloaders)
     model.train_models()
 
 
 def test(args):
-    from models.evaluator import CDEvaluator
-    dataloader = utils.get_loader(args.data_name, img_size=args.img_size,
+    from models_cd.evaluator import CDEvaluator
+    dataloader = utils_cd.get_loader(args.data_name, img_size=args.img_size,
                                   batch_size=args.batch_size, is_train=False,
                                   split='test')
     model = CDEvaluator(args=args, dataloader=dataloader)
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr_decay_iters', default=100, type=int)
 
     args = parser.parse_args()
-    utils.get_device(args)
+    utils_cd.get_device(args)
     print(args.gpu_ids)
 
     #  checkpoints dir
