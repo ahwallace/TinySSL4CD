@@ -12,6 +12,8 @@ This project involves the use of a novel self-supervised learning approach for r
 
 Our proposed self-superivsed method achieves improved performance on the change detection task over using a supervised only approach. We achieve results comparable with other state-of-the-art implementations while using a model with fewer parameters. We also show that our method uses far less data for pretraining that other self-supervised methods, making it a more viable approach for users without access to large computational resources.
 
+![results](./figures/results.png)
+
 ## Dataset <a name = "dataset"></a>
 
 You can find the original LEVIR-CD dataset at:
