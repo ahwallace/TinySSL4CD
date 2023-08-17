@@ -5,7 +5,6 @@ from models_cd.trainer import *
 
 print(torch.cuda.is_available())
 
-
 """
 the main function for training the CD networks
 """
