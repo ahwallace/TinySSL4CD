@@ -1,5 +1,6 @@
 # Masters Thesis: Compute Limited Self-Supervised Learning with Transformers for Change Detection
-## MSc Computer Science (Artificial Intelligence) - University of Galway
+
+MSc Computer Science (Artificial Intelligence) - University of Galway
 
 ## About <a name = "about"></a>
 
