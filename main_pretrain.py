@@ -42,7 +42,7 @@ from engine_pretrain import train_one_epoch
 
 from datasets.levir_dataset import LevirDataset
 
-from models_mixmae_cd_swin_v2 import mixmim_tiny_swin_v2
+from models_mixmae_cd_swin_v2 import mixmae_cd_tiny_swin_v2
 
 
 def get_args_parser():
@@ -54,7 +54,7 @@ def get_args_parser():
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
     # Model parameters
-    parser.add_argument('--model', default='mixmim_base', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='mixmae_cd_tiny_swin_v2', type=str, metavar='MODEL',
                         help='Name of model to train')
 
     parser.add_argument('--input_size', default=224, type=int,
@@ -178,9 +178,8 @@ def main(args):
     )
     
     # define the model
-    if args.model == 'mixmim_tiny_swin_v2':
-        # model = mixmim_tiny_swin_v2()
-        model = mixmim_tiny_swin_v2(
+    if args.model == 'mixmae_cd_tiny_swin_v2':
+        model = mixmae_cd_tiny_swin_v2(
             img_size=args.input_size,
             norm_pix_loss=args.norm_pix_loss,
             low_freq_target=args.low_freq_target

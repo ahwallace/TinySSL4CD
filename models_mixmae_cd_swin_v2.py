@@ -263,8 +263,8 @@ class MixMIM(nn.Module):
 
 
 # @register_model
-def mixmim_tiny_swin_v2(**kwargs):
-    mixmim_default_args = dict(
+def mixmae_cd_tiny_swin_v2(**kwargs):
+    mixmae_cd_default_args = dict(
         img_size=128,
         encoder_stride=32,
         norm_pix_loss=True,
@@ -289,7 +289,7 @@ def mixmim_tiny_swin_v2(**kwargs):
         use_checkpoint=None,
     )
 
-    mixmim_default_args.update(**kwargs)
-    model = MixMIM(**mixmim_default_args)
+    mixmae_cd_default_args.update(**kwargs)
+    model = MixMIM(**mixmae_cd_default_args)
 
     return model
